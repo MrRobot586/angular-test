@@ -1,1 +1,151 @@
-<p>check-application works!</p>
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <!-- Header to form -->
+      <div class="text-center">
+        <h2><i class="bi bi-clipboard2-check" ></i><br>Application check</h2>
+        <p>Here you can view the details and status of your application.</p>
+        <hr class="my-4">
+      </div>
+    
+        <!-- New student form -->
+        <form [formGroup]="NewStudentApplyForm">
+            <div class="row g-3">
+            
+            <!-- Field: First name -->
+            <div class="col-sm-6">
+                
+                <label for="firstName" class="form-label">First name</label>
+                
+                <input type="text" class="form-control" formControlName="firstName" id="firstName" />
+            
+            </div>
+            
+            <!-- Field: Last name -->
+            <div class="col-sm-6">
+                
+                <label for="lastName" class="form-label">Last name</label>
+                
+                <input type="text" class="form-control" id="lastName" formControlName="lastName" />
+
+            </div>
+
+            <!-- Field: Age -->
+            <div class="col-sm-3">
+                
+                <label for="age" class="form-label">Age</label>
+                
+                <input type="number" class="form-control" id="age" formControlName="age" />
+
+            </div>
+
+            <!-- Field: Gender -->
+            <div class="col-sm-3">
+                
+                <label for="gender" class="form-label">Gender</label>
+                
+                <input type="text" class="form-control" id="gender" formControlName="gender" />
+
+            </div>
+
+            <!-- Field: Species -->
+            <div class="col-sm-3">
+                
+                <label for="species" class="form-label">Species</label>
+                
+                <input type="text" class="form-control" id="species" formControlName="species" />
+
+            </div>
+
+            <!-- Field: Dateofbirth -->
+            <div class="col-sm-3">
+                
+                <label for="Dateofbirth" class="form-label">Date of birth</label>
+                
+                <input type="date" class="form-control" id="Dateofbirth" formControlName="Dateofbirth" />
+
+            </div>
+
+            <!-- Field: Email -->
+            <div class="col-sm-6">
+                
+                <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                
+                <input type="email" class="form-control" id="email" formControlName="email" />
+
+            </div>
+
+            <!-- Field: Phone number -->
+            <div class="col-sm-6">
+                <label for="pnumber" class="form-label">Phone number</label>
+                
+                <input type="text" class="form-control" id="pnumber" formControlName="pnumber" />
+                
+            </div>
+
+            <!-- Field: Country -->
+            <div class="col-sm-5">
+                
+                <label for="country" class="form-label">Country</label>
+
+                <input type="text" class="form-control" id="country" formControlName="country" />
+
+            </div>
+
+            <!-- Field: State -->
+            <div class="col-sm-4">
+                
+                <label for="state" class="form-label">State</label>
+
+                <input type="text" class="form-control" id="state" formControlName="state" />
+
+            </div>
+
+            <!-- Field: Zip -->
+            <div class="col-sm-3">
+                
+                <label for="zip" class="form-label">Zip code</label>
+                
+                <input type="text" class="form-control" id="zip" formControlName="zip" />
+
+            </div>
+            
+            <!-- Field: Address -->
+            <div class="col-sm-12">
+                
+                <label for="address" class="form-label">Address</label>
+                
+                <textarea class="form-control" cols="30" rows="2" formControlName="address"></textarea>
+
+            </div>
+
+            <!-- Field: Registration ID -->
+            <div class="col-sm-6 text-center">
+                
+                <label for="registration-id" class="form-label">Registration ID</label>
+                
+                <input type="text" class="form-control text-center" id="registration-id" formControlName="registrationid" />
+
+            </div>
+
+            <!-- Field: Status -->
+            <div class="col-sm-6 text-center">
+                
+                <label for="status" class="form-label">Status</label>
+                
+                <input type="text" class="form-control text-center" id="status" formControlName="status" />
+
+            </div>
+
+            <hr class="my-4">
+            
+            </div>
+            
+            <!-- Back button -->
+            <div class="text-center">
+                <a class="btn btn-primary w-50" routerLink="..">Back</a>
+            </div>
+
+        </form>
+    </div>
+</div>

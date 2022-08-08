@@ -15,9 +15,7 @@ export class NewStudentFormComponent implements OnInit {
 
   ngOnInit(): void { this.newStudentForm = this.SetUpForm() }
 
-  onSubmit():void{
-    
-  }
+  onSubmit():void{ }
 
   SetUpForm():FormGroup {
     return this.fb.group({
@@ -81,14 +79,14 @@ export class NewStudentFormComponent implements OnInit {
       'age': this.newStudentForm.get('age')?.value,
       'gender': this.newStudentForm.get('gender')?.value,
       'species': this.newStudentForm.get('species')?.value,
-      'Dateofbirth': this.newStudentForm.get('dateofbirth')?.value,
+      'Dateofbirth': this.newStudentForm.get('Dateofbirth')?.value,
       'email': this.newStudentForm.get('email')?.value,
       'pnumber': this.newStudentForm.get('pnumber')?.value,
       'country': this.newStudentForm.get('country')?.value,
       'state': this.newStudentForm.get('state')?.value,
       'zip': this.newStudentForm.get('zip')?.value,
       'address': this.newStudentForm.get('address')?.value,
-      'registration-id': (Math.random()*586586586).toFixed(),
+      'registrationid': (Math.random()*586586586).toFixed(),
       'status': 'Pending...'
     };
 
