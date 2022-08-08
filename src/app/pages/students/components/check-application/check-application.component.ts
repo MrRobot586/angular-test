@@ -8,15 +8,15 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CheckApplicationComponent implements OnInit {
 
-  public NewStudentApplyData!:any;
   public NewStudentApplyForm!:FormGroup;
+  public NewStudentApplyData!:any;
 
   constructor(private readonly fb: FormBuilder) { 
     this.NewStudentApplyData = this.GetInfoFromLocalStorage();
   }
 
   ngOnInit(): void {
-    this.NewStudentApplyForm = this.FillFormFields(this.NewStudentApplyData);
+    this.NewStudentApplyForm = this.FillFormFields();
   }
   
 
@@ -29,23 +29,26 @@ export class CheckApplicationComponent implements OnInit {
     }
   }
 
-  FillFormFields(data:any):FormGroup {
-    return this.fb.group({
-      firstName: [ {value: this.NewStudentApplyData.firstName, disabled: true }],
-      lastName: [{value: this.NewStudentApplyData.lastName, disabled: true }],
-      age: [{value: this.NewStudentApplyData.age, disabled: true }],
-      gender: [{value: this.NewStudentApplyData.gender, disabled: true }],
-      species: [{value: this.NewStudentApplyData.species, disabled: true }],
-      Dateofbirth: [{value: this.NewStudentApplyData.Dateofbirth, disabled: true }],
-      email: [{value: this.NewStudentApplyData.email, disabled: true }],
-      pnumber: [{value: this.NewStudentApplyData.pnumber, disabled: true }],
-      country: [{value: this.NewStudentApplyData.country, disabled: true }],
-      state: [{value: this.NewStudentApplyData.state, disabled: true }],
-      zip: [{value: this.NewStudentApplyData.zip, disabled: true }],
-      address: [{value: this.NewStudentApplyData.address, disabled: true }],
-      registrationid: [{value: this.NewStudentApplyData.registrationid, disabled: true }],
-      status: [{value: this.NewStudentApplyData.status, disabled: true }]
-    });
+  // Fill the form fields to Display the information
+  FillFormFields():FormGroup {
+    return this.fb.group(
+      {
+        firstName: [ {value: this.NewStudentApplyData ?  this.NewStudentApplyData : '' , disabled: true }],
+        lastName: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.lastName : '', disabled: true }],
+        age: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.age : '', disabled: true }],
+        gender: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.gender : '', disabled: true }],
+        species: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.species : '', disabled: true }],
+        Dateofbirth: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.Dateofbirth : '', disabled: true }],
+        email: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.email : '', disabled: true }],
+        pnumber: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.pnumber : '', disabled: true }],
+        country: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.country : '', disabled: true }],
+        state: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.state : '', disabled: true }],
+        zip: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.zip : '', disabled: true }],
+        address: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.address : '', disabled: true }],
+        registrationid: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.registrationid : '', disabled: true }],
+        status: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.status : '', disabled: true }]
+      }
+    ); 
   }
   
 }

@@ -8,12 +8,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class NewStudentFormComponent implements OnInit {
   
-  public newStudentForm!:FormGroup;
+  public ShowAlert:Boolean = false; 
+  public NewStudentForm!:FormGroup;
   private FormData!:Object;
-  
+
   constructor(private readonly fb: FormBuilder) { }
 
-  ngOnInit(): void { this.newStudentForm = this.SetUpForm() }
+  ngOnInit(): void { this.NewStudentForm = this.SetUpForm() }
 
   onSubmit():void{ }
 
@@ -65,7 +66,7 @@ export class NewStudentFormComponent implements OnInit {
       return message;
     
     }else{
-      return (this.newStudentForm.get(inputname)?.touched && this.newStudentForm.get(inputname)?.errors?.[condition]);
+      return (this.NewStudentForm.get(inputname)?.touched && this.NewStudentForm.get(inputname)?.errors?.[condition]);
     }
 
   }
@@ -74,23 +75,31 @@ export class NewStudentFormComponent implements OnInit {
     
     // Get and setup form data
     this.FormData = {
-      'firstName': this.newStudentForm.get('firstName')?.value,
-      'lastName': this.newStudentForm.get('gender')?.value,
-      'age': this.newStudentForm.get('age')?.value,
-      'gender': this.newStudentForm.get('gender')?.value,
-      'species': this.newStudentForm.get('species')?.value,
-      'Dateofbirth': this.newStudentForm.get('Dateofbirth')?.value,
-      'email': this.newStudentForm.get('email')?.value,
-      'pnumber': this.newStudentForm.get('pnumber')?.value,
-      'country': this.newStudentForm.get('country')?.value,
-      'state': this.newStudentForm.get('state')?.value,
-      'zip': this.newStudentForm.get('zip')?.value,
-      'address': this.newStudentForm.get('address')?.value,
+      'firstName': this.NewStudentForm.get('firstName')?.value,
+      'lastName': this.NewStudentForm.get('gender')?.value,
+      'age': this.NewStudentForm.get('age')?.value,
+      'gender': this.NewStudentForm.get('gender')?.value,
+      'species': this.NewStudentForm.get('species')?.value,
+      'Dateofbirth': this.NewStudentForm.get('Dateofbirth')?.value,
+      'email': this.NewStudentForm.get('email')?.value,
+      'pnumber': this.NewStudentForm.get('pnumber')?.value,
+      'country': this.NewStudentForm.get('country')?.value,
+      'state': this.NewStudentForm.get('state')?.value,
+      'zip': this.NewStudentForm.get('zip')?.value,
+      'address': this.NewStudentForm.get('address')?.value,
       'registrationid': (Math.random()*586586586).toFixed(),
       'status': 'Pending...'
     };
 
     localStorage.setItem('NewStudentApplication', JSON.stringify(this.FormData));
+    
+    setTimeout(() => {
+      this.ShowAlert = true;
+    }, 1000);
+    
+    setTimeout(() => {
+      this.ShowAlert = false;
+    }, 4000);
   }
   
 }

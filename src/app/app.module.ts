@@ -15,6 +15,7 @@ import { StudentsComponent } from './pages/students/students.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewStudentFormComponent } from './pages/students/components/new-student-form/new-student-form.component';
 import { CheckApplicationComponent } from './pages/students/components/check-application/check-application.component';
+import { SuccessAlertComponent } from './pages/students/components/success-alert/success-alert.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CheckApplicationComponent } from './pages/students/components/check-app
     StudentsComponent,
     HomeComponent,
     NewStudentFormComponent,
-    CheckApplicationComponent
+    CheckApplicationComponent,
+    SuccessAlertComponent
   ],
   imports: [
     BrowserModule,

@@ -5,13 +5,14 @@
     <div class="text-center">
       <h2><i class="bi bi-clipboard2-check" ></i><br>Admission form</h2>
       <p>Complete the following form to formalize your application to Hogwarts, if you have already completed the form, check the status of your application by clicking <a routerLink="../check-application">here.</a></p>
-      <hr class="my-4">
     </div>
 
+    <hr class="my-3">
+    
     <!-- New student form -->
-    <form (ngSubmit)="SaveFormToLocalStorage()" onsubmit="return false;" [formGroup]="newStudentForm" novalidate>
-      <div class="row g-3">
-        
+    <form (ngSubmit)="SaveFormToLocalStorage()" [formGroup]="NewStudentForm" novalidate>
+      <div class="row g-4">
+
         <!-- Field: First name -->
         <div class="col-sm-6">
           
@@ -253,19 +254,22 @@
           </div>
 
         </div>
-
-        <hr class="my-4">
-      
+        
       </div>
+      
+      <hr class="my-4">
+      
+      <app-success-alert *ngIf="ShowAlert"></app-success-alert>
       
       <!-- Submit and Back button -->
       <div class="text-center">
         <a class="btn btn-danger mx-1" routerLink="..">Back</a>
-        <button type="submit" class="btn btn-primary mx-1" [disabled]="newStudentForm.invalid">Submit application</button>
+        <button type="submit" class="btn btn-primary mx-1" [disabled]="NewStudentForm.invalid">Submit application</button>
       </div>
 
     </form>
 
+    
   </div>
 
 </div>
