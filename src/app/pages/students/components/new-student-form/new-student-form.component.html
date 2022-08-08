@@ -1,0 +1,271 @@
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <!-- Header to form -->
+    <div class="text-center">
+      <h2><i class="bi bi-clipboard2-check" ></i><br>Admission form</h2>
+      <p>Complete the following form to formalize your application to Hogwarts, if you have already completed the form, check the status of your application by clicking <a routerLink="../check-application">here.</a></p>
+      <hr class="my-4">
+    </div>
+
+    <!-- New student form -->
+    <form (ngSubmit)="SaveFormToLocalStorage()" onsubmit="return false;" [formGroup]="newStudentForm" novalidate>
+      <div class="row g-3">
+        
+        <!-- Field: First name -->
+        <div class="col-sm-6">
+          
+          <label for="firstName" class="form-label">First name</label>
+          
+          <input 
+            type="text" 
+            class="form-control" id="firstName"
+            placeholder="Ex: Diego Jose..."
+            formControlName="firstName"
+            [ngClass]="ValidateFormInput('firstName', 'required') || ValidateFormInput('firstName', 'minlength') ? 'is-invalid' : ''" />
+          
+            <div class="invalid-feedback">
+              {{  ValidateFormInput('firstName', 'required') || ValidateFormInput('firstName', 'minlenght') ? ValidateFormInput('firstName', 'required', true) : ValidateFormInput('firstName', 'minlength', true)  }}
+            </div>
+        
+        </div>
+        
+        <!-- Field: Last name -->
+        <div class="col-sm-6">
+          
+          <label for="lastName" class="form-label">Last name</label>
+          
+          <input 
+            type="text" 
+            class="form-control" 
+            id="lastName" 
+            placeholder="Ex: Oropeza Diaz..." 
+            formControlName="lastName"
+            [ngClass]="ValidateFormInput('lastName', 'required') || ValidateFormInput('lastName', 'minlength') ? 'is-invalid' : ''" />
+          
+          <div class="invalid-feedback">
+            {{  ValidateFormInput('lastName', 'required') || ValidateFormInput('lastName', 'minlenght') ? ValidateFormInput('lastName', 'required', true) : ValidateFormInput('lastName', 'minlength', true)  }}
+          </div>
+
+        </div>
+
+        <!-- Field: Age -->
+        <div class="col-sm-3">
+          
+          <label for="age" class="form-label">Age</label>
+          
+          <input 
+            type="number" 
+            class="form-control" 
+            id="age" 
+            formControlName="age"
+            [ngClass]="ValidateFormInput('age', 'required') || ValidateFormInput('age', 'min') || ValidateFormInput('age', 'max') ? 'is-invalid' : ''" />
+          
+          <div class="invalid-feedback">
+            {{ ValidateFormInput('age', 'required') ? ValidateFormInput('age', 'required', true ) : '' }}
+            {{ ValidateFormInput('age', 'min') || ValidateFormInput('age', 'max') ? ValidateFormInput('age', 'min', true ) : '' }}
+          </div>
+
+        </div>
+
+        <!-- Field: Gender -->
+        <div class="col-sm-3">
+          
+          <label for="gender" class="form-label">Gender</label>
+          
+          <select 
+            class="form-select" 
+            id="gender" 
+            formControlName="gender"
+            [ngClass]="ValidateFormInput('gender', 'required') ? 'is-invalid' : ''">
+
+            <option value="" selected disabled>Choose...</option>
+            <option value="male">Male</option>
+            <option value="famale">Famale</option>
+            <option value="not-binary">Not binary</option>
+          </select>
+          
+          <div class="invalid-feedback">
+            {{ ValidateFormInput('gender', 'required', true) }}
+          </div>
+
+        </div>
+
+        <!-- Field: Species -->
+        <div class="col-sm-3">
+          
+          <label for="species" class="form-label">Species</label>
+          
+          <input 
+            type="text" 
+            class="form-control" 
+            id="species" 
+            placeholder="Ex: Human" 
+            formControlName="species"
+            [ngClass]="ValidateFormInput('species', 'required') || ValidateFormInput('species', 'minlength') || ValidateFormInput('species', 'maxlength') ? 'is-invalid' : ''" />
+          
+          <div class="invalid-feedback">
+            {{ ValidateFormInput('species', 'required') ? ValidateFormInput('species', 'required', true) : '' }}
+            {{ ValidateFormInput('species', 'minlength') || ValidateFormInput('species', 'maxlength') ? ValidateFormInput('species', ' ', true) : '' }}
+          </div>
+
+        </div>
+
+        <!-- Field: Dateofbirth -->
+        <div class="col-sm-3">
+          
+          <label for="Dateofbirth" class="form-label">Date of birth</label>
+          
+          <input 
+            type="date" 
+            class="form-control" 
+            id="Dateofbirth" 
+            formControlName="Dateofbirth"
+            [ngClass]="ValidateFormInput('Dateofbirth', 'required') ? 'border-danger' : ''" />
+          
+          <div class="invalid-feedback">
+            {{ ValidateFormInput('Dateofbirth', 'required') ? ValidateFormInput('Dateofbirth', 'required', true) : '' }}
+          </div>
+
+        </div>
+
+        <!-- Field: Email -->
+        <div class="col-sm-6">
+          
+          <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+          
+          <input 
+            type="email" 
+            class="form-control" 
+            id="email" 
+            placeholder="you@example.com" 
+            formControlName="email"
+            [ngClass]="ValidateFormInput('email', 'email') ? 'is-invalid' : ''" />
+          
+          <div class="invalid-feedback">
+            {{ ValidateFormInput('email', 'email') ? ValidateFormInput('email', 'email', true) : '' }}
+
+          </div>
+
+        </div>
+
+        <!-- Field: Phone number -->
+        <div class="col-sm-6">
+          <label for="pnumber" class="form-label">Phone number</label>
+          
+          <input 
+            type="text" 
+            class="form-control" 
+            id="pnumber" 
+            placeholder="Ex: 5556667778" 
+            formControlName="pnumber"
+            [ngClass]="ValidateFormInput('pnumber', 'required') || ValidateFormInput('pnumber', 'minlength') || ValidateFormInput('pnumber', 'maxlength') ? 'is-invalid' : ''" />
+          
+          <div class="invalid-feedback">
+            {{ ValidateFormInput('pnumber', 'required') ? ValidateFormInput('pnumber', 'required', true) : '' }}
+            {{ ValidateFormInput('pnumber', 'minlength') ? ValidateFormInput('pnumber', 'minlength', true) : '' }}
+            {{ ValidateFormInput('pnumber', 'maxlength') ? ValidateFormInput('pnumber', 'maxlength', true) : '' }}
+          </div>
+
+        </div>
+
+        <!-- Field: Country -->
+        <div class="col-sm-5">
+          
+          <label for="country" class="form-label">Country</label>
+          
+          <select 
+            class="form-select" 
+            id="country" 
+            formControlName="country"
+            [ngClass]="ValidateFormInput('country', 'required') ? 'is-invalid' : ''">
+
+            <option value="" selected disabled>Choose...</option>
+            <option value="united-states">United States</option>
+            <option value="colombia">Colombia</option>
+            <option value="venezuela">Venezuela</option>
+          </select>
+
+          <div class="invalid-feedback">
+            {{ ValidateFormInput('country', 'required', true) }}
+          </div>
+
+        </div>
+
+        <!-- Field: State -->
+        <div class="col-sm-4">
+          
+          <label for="state" class="form-label">State</label>
+          
+          <select 
+            class="form-select" 
+            id="state" 
+            formControlName="state"
+            [ngClass]="ValidateFormInput('state', 'required') ? 'is-invalid' : ''">
+
+            <option value="" selected disabled>Choose...</option>
+            <option value="california">California</option>
+            <option value="zulia">Zulia</option>
+            <option value="falcon">Falcon</option>
+          </select>
+
+          <div class="invalid-feedback">
+            {{ ValidateFormInput('state', 'required', true) }}
+          </div>
+
+        </div>
+
+        <!-- Field: Zip -->
+        <div class="col-sm-3">
+          
+          <label for="zip" class="form-label">Zip code</label>
+          
+          <input 
+            type="text" 
+            class="form-control" 
+            id="zip" 
+            placeholder="Ex: 4101"
+            formControlName="zip"
+            [ngClass]="ValidateFormInput('zip', 'required') ? 'is-invalid' : ''">
+          
+          <div class="invalid-feedback">
+            {{ ValidateFormInput('zip', 'required', true) }}
+          </div>
+
+        </div>
+        
+        <!-- Field: Address -->
+        <div class="col-sm-12">
+          
+          <label for="address" class="form-label">Address</label>
+          
+          <textarea 
+            class="form-control" 
+            placeholder="123 chicken street" 
+            cols="30" 
+            rows="2" 
+            formControlName="address"
+            [ngClass]="ValidateFormInput('address', 'required') || ValidateFormInput('address', 'minlength') ? 'is-invalid' : ''">
+          </textarea>
+
+          <div class="invalid-feedback">
+            {{  ValidateFormInput('address', 'required') || ValidateFormInput('address', 'minlenght') ? ValidateFormInput('address', 'required', true) : ValidateFormInput('address', 'minlength', true)  }}
+          </div>
+
+        </div>
+
+        <hr class="my-4">
+      
+      </div>
+      
+      <!-- Submit and Back button -->
+      <div class="text-center">
+        <a class="btn btn-danger mx-1" routerLink="..">Back</a>
+        <button type="submit" class="btn btn-primary mx-1" [disabled]="newStudentForm.invalid">Submit application</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
