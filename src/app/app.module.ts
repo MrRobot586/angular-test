@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Components imports
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AllCharactersComponent } from './pages/all-characters/all-characters.component';
 import { TeachersComponent } from './pages/teachers/teachers.component';
 import { StudentsComponent } from './pages/students/students.component';
@@ -16,6 +16,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NewStudentFormComponent } from './pages/students/components/new-student-form/new-student-form.component';
 import { CheckApplicationComponent } from './pages/students/components/check-application/check-application.component';
 import { SuccessAlertComponent } from './pages/students/components/success-alert/success-alert.component';
+import { DataTableComponent } from './shared/components/data-table/data-table.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SuccessAlertComponent } from './pages/students/components/success-alert
     HomeComponent,
     NewStudentFormComponent,
     CheckApplicationComponent,
-    SuccessAlertComponent
+    SuccessAlertComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
