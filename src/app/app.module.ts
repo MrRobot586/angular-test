@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -16,7 +17,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { NewStudentFormComponent } from './pages/students/components/new-student-form/new-student-form.component';
 import { CheckApplicationComponent } from './pages/students/components/check-application/check-application.component';
 import { SuccessAlertComponent } from './pages/students/components/success-alert/success-alert.component';
-import { DataTableComponent } from './shared/components/data-table/data-table.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,7 @@ import { DataTableComponent } from './shared/components/data-table/data-table.co
     HomeComponent,
     NewStudentFormComponent,
     CheckApplicationComponent,
-    SuccessAlertComponent,
-    DataTableComponent
+    SuccessAlertComponent
   ],
   imports: [
     BrowserModule,
