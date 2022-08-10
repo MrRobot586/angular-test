@@ -10,6 +10,7 @@ import { NewStudentFormComponent } from './pages/students/components/new-student
 import { CheckApplicationComponent } from './pages/students/components/check-application/check-application.component';
 import { DataTableComponent } from './shared/components/data-table/data-table.component';
 import { DataDetailsComponent } from './shared/components/data-details/data-details.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,7 +29,8 @@ const routes: Routes = [
     ]
   },
   { path: 'teachers', component: TeachersComponent },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '404', pathMatch: 'full' }
 ];
 
 @NgModule({

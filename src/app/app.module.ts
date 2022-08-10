@@ -22,6 +22,7 @@ import { DataTableComponent } from './shared/components/data-table/data-table.co
 import { DataDetailsComponent } from './shared/components/data-details/data-details.component';
 
 import { GeTagePipe } from './shared/pipes/get-age.pipe';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { GeTagePipe } from './shared/pipes/get-age.pipe';
     DataTableComponent,
     HouseSelectorComponent,
     DataDetailsComponent,
-    GeTagePipe
+    GeTagePipe,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
