@@ -10,11 +10,11 @@
         <hr class="my-4">
         
         <div class="row p-3">
-            <div class="col"><img src="{{ Char.image }}" class="rounded w-100" alt="{{ Char.name }} - image"></div>
+            <div class="col"><img style="max-height: 425px;" src="{{ Char.image != '' ? Char.image : '../../../../../../assets/no-img-placeholder.png' }}" class="rounded w-100" alt="{{ Char.image ? (Char.name + 'image') : 'Not Image Avalible' }}"></div>
             <div class="col">
                 <div class="row">
                     <div class="col rounded my-2 w-100">
-                        <h4>Name: {{ Char.name }}</h4>
+                        <h5>Name: <span class="text-muted">{{ Char.name }}</span></h5>
                     </div>
                 </div>
                 
@@ -22,7 +22,7 @@
                 
                 <div class="row">
                     <div class="col rounded my-2 w-100">
-                        <h4>Age: {{ Char.yearOfBirth | GetAge }}</h4>
+                        <h5>Year Of Birth: <span class="text-muted">{{ Char.yearOfBirth ? Char.yearOfBirth  : 'Unknow...' }}</span></h5>
                     </div>
                 </div>
                 
@@ -30,7 +30,7 @@
                 
                 <div class="row">
                     <div class="col rounded my-2 w-100">
-                        <h4>Year Of Birth: {{ Char.yearOfBirth }}</h4>
+                        <h5>Age: <span class="text-muted">{{ Char.yearOfBirth ? (Char.yearOfBirth | GetAge) : 'Unknow...' }}</span></h5>
                     </div>
                 </div>
                 
@@ -38,7 +38,7 @@
                 
                 <div class="row">
                     <div class="col rounded my-2 w-100">
-                        <h4>Gender: {{ Char.gender }}</h4>
+                        <h5>Gender: <span class="text-muted">{{ Char.gender ? (Char.gender | titlecase) : 'Unknow...' }}</span></h5>
                     </div>
                 </div>
                 
@@ -46,7 +46,7 @@
                 
                 <div class="row">
                     <div class="col rounded my-2 w-100">
-                        <h4>Species: {{ Char.species }}</h4>
+                        <h5>Species: <span class="text-muted">{{ Char.species ? (Char.species | titlecase) : 'Unknow...'  }}</span></h5>
                     </div>
                 </div>
                 
@@ -54,7 +54,7 @@
                 
                 <div class="row">
                     <div class="col rounded my-2 w-100">
-                        <h4>Patronus: {{ Char.patronus }}</h4>
+                        <h5>Patronus: <span class="text-muted">{{ Char.patronus ? (Char.patronus | titlecase) : 'Unknow...' }}</span></h5>
                     </div>
                 </div>
                 
@@ -62,7 +62,7 @@
                 
                 <div class="row">
                     <div class="col rounded my-2 w-100">
-                        <h4>House: {{ Char.house }}</h4>
+                        <h5>House: <span class="text-muted">{{ Char.patronus ? (Char.house | titlecase) : 'Unknow...' }}</span></h5>
                     </div>
                 </div>
             </div>
