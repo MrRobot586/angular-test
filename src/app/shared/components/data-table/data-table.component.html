@@ -28,7 +28,11 @@
         </tbody>
     </table>
     <router-outlet></router-outlet>
-    <div>
+    <div *ngIf="NoData">
         <h4 class="text-center">There is no results for that...</h4>
+    </div>
+
+    <div *ngIf="!DataLoaded">
+      <h4 class="text-center">Waiting for the server response, pease stand by...</h4>
     </div>
 </div>

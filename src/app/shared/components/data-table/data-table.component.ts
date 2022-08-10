@@ -14,8 +14,10 @@ import { CharacterData } from '../../models/character-data';
 export class DataTableComponent implements OnInit {
 
   public URLParamsSub!: Subscription;
-
-  public DataFromApi:CharacterData[] = []; 
+  public DataFromApi:CharacterData[] = [];
+  
+  public NoData:Boolean = false;
+  public DataLoaded:Boolean = false;
 
   constructor(private ApiService:HpApiService, private route:ActivatedRoute, private router:Router) { }
 
@@ -25,6 +27,7 @@ export class DataTableComponent implements OnInit {
       query = this.ApiService.ParseQuery(this.router.url.split('/'));
       this.ApiService.GetDataFromApi(query).subscribe(data=>{
         this.DataFromApi = data;
+        this.DataLoaded = true;
       });
     });
   }
