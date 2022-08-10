@@ -1,0 +1,34 @@
+<div class="container my-4">
+    <table class="table table-resposive align-middle table-borderless table-hover text-center">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col" style="width: 5%">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Species</th>
+            <th scope="col" style="width: 5%;">Age</th>
+            <th scope="col">House</th>
+            <th scope="col">Patronus</th>
+            <th scope="col">More info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="height: 5rem;" *ngFor="let char of DataFromApi; let i=index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ char.name }}</td>
+            <td>{{ char.gender }}</td>
+            <td>{{ char.species }}</td>
+            <td>{{ char.yearOfBirth ? (char.yearOfBirth - 2022) * -1 : 'Unknow...' }}</td>
+            <td>{{ char.house }}</td>
+            <td>{{ char.patronus ? char.patronus : 'Unknow...' }}</td>
+            <th>
+              <button class="btn btn-outline-dark  w-100">See details</button>
+            </th>
+          </tr>
+        </tbody>
+    </table>
+    <router-outlet></router-outlet>
+    <div>
+        <h4 class="text-center">There is no results for that...</h4>
+    </div>
+</div>

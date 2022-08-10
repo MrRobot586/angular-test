@@ -8,11 +8,19 @@ import { StudentsComponent } from './pages/students/students.component';
 import { TeachersComponent } from './pages/teachers/teachers.component';
 import { NewStudentFormComponent } from './pages/students/components/new-student-form/new-student-form.component';
 import { CheckApplicationComponent } from './pages/students/components/check-application/check-application.component';
+import { DataTableComponent } from './shared/components/data-table/data-table.component';
+import { DataDetailsComponent } from './shared/components/data-details/data-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'allcharacters', component: AllCharactersComponent },
+  { path: 'all-characters', redirectTo: 'all-characters/all' },
+  { path: 'all-characters', component: AllCharactersComponent, children:
+    [
+      { path:'all', component: DataTableComponent },
+      { path:'house/:house', component: DataTableComponent },
+    ]
+  },
   { path: 'students', component: StudentsComponent, children: 
     [
       { path: 'check-application', component: CheckApplicationComponent },

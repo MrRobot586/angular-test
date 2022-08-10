@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -17,6 +17,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { NewStudentFormComponent } from './pages/students/components/new-student-form/new-student-form.component';
 import { CheckApplicationComponent } from './pages/students/components/check-application/check-application.component';
 import { SuccessAlertComponent } from './pages/students/components/success-alert/success-alert.component';
+import { DataTableComponent } from './shared/components/data-table/data-table.component';
+import { HouseSelectorComponent } from './pages/all-characters/components/house-selector/house-selector.component';
+import { DataDetailsComponent } from './shared/components/data-details/data-details.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +31,16 @@ import { SuccessAlertComponent } from './pages/students/components/success-alert
     HomeComponent,
     NewStudentFormComponent,
     CheckApplicationComponent,
-    SuccessAlertComponent
+    SuccessAlertComponent,
+    DataTableComponent,
+    HouseSelectorComponent,
+    DataDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FontAwesomeModule
   ],
   providers: [],
