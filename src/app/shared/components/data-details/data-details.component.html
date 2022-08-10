@@ -1,1 +1,77 @@
-<p>data-details works!</p>
+<div id="details-modal-view" class="modal">
+
+    <div class="modal-content">
+      
+        <!-- Header to form -->
+        <div class="text-center">
+            <h2><i class="bi bi-file-person-fill"></i><br>{{ 'harry poter' }} - Details</h2>
+        </div>
+
+        <hr class="my-4">
+        
+        <div class="row p-3">
+            <div class="col"><img src="{{ Char.image }}" class="rounded w-100" alt="{{ Char.name }} - image"></div>
+            <div class="col">
+                <div class="row">
+                    <div class="col rounded my-2 w-100">
+                        <h4>Name: {{ Char.name }}</h4>
+                    </div>
+                </div>
+                
+                <hr class="my-1">
+                
+                <div class="row">
+                    <div class="col rounded my-2 w-100">
+                        <h4>Age: {{ Char.yearOfBirth | GetAge }}</h4>
+                    </div>
+                </div>
+                
+                <hr class="my-1">
+                
+                <div class="row">
+                    <div class="col rounded my-2 w-100">
+                        <h4>Year Of Birth: {{ Char.yearOfBirth }}</h4>
+                    </div>
+                </div>
+                
+                <hr class="my-1">
+                
+                <div class="row">
+                    <div class="col rounded my-2 w-100">
+                        <h4>Gender: {{ Char.gender }}</h4>
+                    </div>
+                </div>
+                
+                <hr class="my-1">
+                
+                <div class="row">
+                    <div class="col rounded my-2 w-100">
+                        <h4>Species: {{ Char.species }}</h4>
+                    </div>
+                </div>
+                
+                <hr class="my-1">
+                
+                <div class="row">
+                    <div class="col rounded my-2 w-100">
+                        <h4>Patronus: {{ Char.patronus }}</h4>
+                    </div>
+                </div>
+                
+                <hr class="my-1">
+                
+                <div class="row">
+                    <div class="col rounded my-2 w-100">
+                        <h4>House: {{ Char.house }}</h4>
+                    </div>
+                </div>
+            </div>
+        
+        <hr class="my-4">
+
+        <div class="text-center">
+            <a class="btn btn-outline-dark  w-100" (click)="Details.emit(DetailsToggle=false)">Back</a>
+        </div>
+        
+    </div>
+</div>

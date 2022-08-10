@@ -22,12 +22,16 @@
             <td>{{ char.house ? char.house : 'Unknow...' }}</td>
             <td>{{ char.patronus ? char.patronus : 'Unknow...' }}</td>
             <th>
-              <button class="btn btn-outline-dark  w-100">See details</button>
+              <button class="btn btn-outline-dark  w-100" (click)="DetailsOf = i; GetDetails=true">See details...</button>
             </th>
           </tr>
         </tbody>
     </table>
+    
+    <app-data-details *ngIf="GetDetails" [Char]="DataFromApi[DetailsOf]" [DetailsToggle]="GetDetails" (Details)="GetDetails = $event"></app-data-details>
+    
     <router-outlet></router-outlet>
+    
     <div *ngIf="NoData">
         <h4 class="text-center">There is no results for that...</h4>
     </div>
