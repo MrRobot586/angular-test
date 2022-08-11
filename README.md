@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
 ## Live demo  
-You can see the live demo of the app [by clicking here](https://github.com/angular/angular-cli)
+You can see the live demo of the app [by clicking here](https://angulartest-diego-oropeza.netlify.app/home)
 
 ## Requeriments
 * nodejs
