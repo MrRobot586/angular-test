@@ -23,9 +23,30 @@ You can see the live demo of the app [by clicking here](https://angulartest-dieg
 #### 5.- Navigate to: `http://localhost:4200/`. The application will automatically reload if you change any of the source files. 
 
 ## Technologies used in the project
-* Angular 14
-* Bootstrap 5
-* Git
+* **Angular 14**
+* **Bootstrap 5**
+* **Git**
+
+## Features
+
+* **navigation bar:** You can navigate through the site through a convenient navigation bar located at the top of the application, which has 3 sections and a search bar.
+
+* **All characters section:** In this section you can see all the hogwarts characters whose information comes from the public API given in the test document, there is also a bar to filter the results according to the wizard house.
+
+* **Students section:** In this section you can see all the students of Hogwarts School and you can also fill out the form to become one, you can also see the form already filled out.
+
+* **Teachers section:** In this section you will see all the teachers of Hogwarts School.
+
+* **Details button:** Each row of the information table has a button to view the details of the selected character.
+
+* **Sort and Filtering**: You can sort the table by clicking in the colum that you what sort or you can filter by the name colum typing the name in the search bar
+
+* **404 page:** If you try to go to an unknown route you will be redirected to a 404 error page.
+
+## To-Do list:
+- [ ] Go up button
+- [ ] View selector, to change the view type to cards or tables
+- [ ] ...
 
 ## Test challenges
 
