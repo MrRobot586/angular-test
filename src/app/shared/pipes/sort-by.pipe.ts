@@ -17,7 +17,11 @@ export class SortByPipe implements PipeTransform {
       res = data;
     } else{
       if(sortby === 'number'){// Sort by number
-        res = data.reverse();
+        if(sort_arg == 'up'){
+          res = data.sort(function(a, b){return b.id - a.id });
+        }else{
+          res = data.sort(function(a, b){return a.id - b.id });
+        }
       }else if(sortby === 'name'){ // Sort by name
         if(sort_arg == 'down'){
           res = data.sort(SortArray)
