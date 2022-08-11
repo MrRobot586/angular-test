@@ -2,8 +2,8 @@
     <table class="table table-resposive align-middle table-borderless table-hover text-center">
         <thead class="table-dark">
           <tr>
-            <th scope="col" style="width: 5%">#</th>
-            <th scope="col">Name</th>
+            <th scope="col" class="sort" style="width: 5%" (click)="ToggleSort('number')"># <i *ngIf="SortTable.colum == 'number'" class="{{ SortTable.icon }} mini-icon"></i></th>
+            <th scope="col" class="sort" (click)="ToggleSort('name')">Name <i *ngIf="SortTable.colum == 'name'" class="{{ SortTable.icon }} mini-icon"></i></th>
             <th scope="col">Gender</th>
             <th scope="col">Species</th>
             <th scope="col" style="width: 10%;">Age</th>
@@ -13,8 +13,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr style="height: 5rem;" *ngFor="let char of DataFromApi; let i=index">
-            <th scope="row">{{ i + 1 }}</th>
+          <tr style="height: 5rem;" *ngFor="let char of (DataFromApi | sortBy :SortTable.colum :SortTable.type ); let i=index">
+            <th scope="row">{{ i+1 }}</th>
             <td>{{ char.name }}</td>
             <td>{{ char.gender ? char.gender : 'Unknow...' }}</td>
             <td>{{ char.species ? char.species : 'Unknow...' }}</td>

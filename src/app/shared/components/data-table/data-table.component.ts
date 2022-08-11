@@ -13,7 +13,6 @@ import { CharacterData } from '../../models/character-data';
 })
 export class DataTableComponent implements OnInit {
 
-  public URLQueryParamsObserver!: Subscription;
   public URLParamsObserver!: Subscription;
   public DataFromApi:CharacterData[] = [];
   
@@ -22,7 +21,14 @@ export class DataTableComponent implements OnInit {
   public NoData:Boolean = false;
   public DataLoaded:Boolean = false;
 
-  constructor(private ApiService:HpApiService, private route:ActivatedRoute, private router:Router) { }
+  public SortTable = {
+    'colum' : '',
+    'type': 'down',
+    'icon': '',
+    'active': false
+  };
+
+  constructor(private ApiService:HpApiService, private route:ActivatedRoute, private router:Router) {  }
 
   ngOnInit():void{ 
     this.URLParamsObserver = this.route.params.subscribe(() => {
@@ -37,6 +43,22 @@ export class DataTableComponent implements OnInit {
 
   ngOnDestroy():void{
     this.URLParamsObserver?.unsubscribe();
-    this.URLQueryParamsObserver?.unsubscribe();
+  }
+
+  ToggleSort(colum:string):void{
+    this.SortTable.colum = colum;
+    
+    if(!this.SortTable.active){
+      this.SortTable.active = true;
+      this.SortTable.icon = 'bi bi-caret-down-fill';
+    }else{
+      if(this.SortTable.icon == 'bi bi-caret-down-fill' && this.SortTable.type == 'down'){
+        this.SortTable.icon = 'bi bi-caret-up-fill';
+        this.SortTable.type = 'up';
+      }else{
+        this.SortTable.icon = 'bi bi-caret-down-fill';
+        this.SortTable.type = 'down';
+      }
+    }
   }
 }

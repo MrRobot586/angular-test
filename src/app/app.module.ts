@@ -23,6 +23,7 @@ import { DataDetailsComponent } from './shared/components/data-details/data-deta
 
 import { GeTagePipe } from './shared/pipes/get-age.pipe';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { SortByPipe } from './shared/pipes/sort-by.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     HouseSelectorComponent,
     DataDetailsComponent,
     GeTagePipe,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
