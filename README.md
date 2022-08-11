@@ -12,7 +12,7 @@ You can see the live demo of the app [by clicking here](https://github.com/angul
 * Web browser (chrome, firefox, safari)
 
 ## Getting started
-#### 1.- Clone the git repository with: `git clone`
+#### 1.- Clone the git repository with: `git clone https://github.com/MrRobot586/angular-test.git`
 
 #### 2.- Go to the root directory of the project: `cd path/to/angular-test`
 
