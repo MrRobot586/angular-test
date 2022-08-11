@@ -14,7 +14,7 @@
         </thead>
         <tbody>
           <tr style="height: 5rem;" *ngFor="let char of (DataFromApi | sortBy :SortTable.colum :SortTable.type ); let i=index">
-            <th scope="row">{{ i+1 }}</th>
+            <th scope="row">{{char.id }}</th>
             <td>{{ char.name }}</td>
             <td>{{ char.gender ? char.gender : 'Unknow...' }}</td>
             <td>{{ char.species ? char.species : 'Unknow...' }}</td>

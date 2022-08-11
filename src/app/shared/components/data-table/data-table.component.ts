@@ -36,6 +36,7 @@ export class DataTableComponent implements OnInit {
       query = this.ApiService.ParseQuery(this.router.url.split('/'));
       this.ApiService.GetDataFromApi(query).subscribe(data=>{
         this.DataFromApi = data;
+        this.AddId();
         this.DataLoaded = true;
       });
     });
@@ -43,6 +44,12 @@ export class DataTableComponent implements OnInit {
 
   ngOnDestroy():void{
     this.URLParamsObserver?.unsubscribe();
+  }
+
+  AddId():void{
+    this.DataFromApi.forEach((char,index) =>{
+      this.DataFromApi[index].id = index + 1;
+    });
   }
 
   ToggleSort(colum:string):void{

@@ -1,4 +1,5 @@
 export interface CharacterData {
+    id?:number; 
     name:string;
     species:string;
     gender:string;
