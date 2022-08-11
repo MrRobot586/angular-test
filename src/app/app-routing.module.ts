@@ -13,7 +13,6 @@ import { DataDetailsComponent } from './shared/components/data-details/data-deta
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'all-characters', redirectTo: 'all-characters/all' },
   { path: 'all-characters', component: AllCharactersComponent, children:
@@ -29,6 +28,7 @@ const routes: Routes = [
     ]
   },
   { path: 'teachers', component: TeachersComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '404', pathMatch: 'full' }
 ];
