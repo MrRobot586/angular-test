@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { HpApiService } from '../../services/hp-api.service';
@@ -14,6 +14,7 @@ import { CharacterData } from '../../models/character-data';
 export class DataTableComponent implements OnInit {
 
   public URLParamsObserver!: Subscription;
+  public URLQueryParamsObserver!: Subscription;
   public DataFromApi:CharacterData[] = [];
   
   public DetailsOf!:number;
@@ -28,7 +29,11 @@ export class DataTableComponent implements OnInit {
     'active': false
   };
 
-  constructor(private ApiService:HpApiService, private route:ActivatedRoute, private router:Router) {  }
+  constructor(
+    public ApiService:HpApiService,
+    private route:ActivatedRoute,
+    private router:Router
+  ) {  }
 
   ngOnInit():void{ 
     this.URLParamsObserver = this.route.params.subscribe(() => {
@@ -42,7 +47,7 @@ export class DataTableComponent implements OnInit {
     });
   }
 
-  ngOnDestroy():void{
+  OnDestroy():void{
     this.URLParamsObserver?.unsubscribe();
   }
 

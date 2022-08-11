@@ -7,7 +7,8 @@ import { CharacterData } from '../models/character-data';
   providedIn: 'root'
 })
 export class HpApiService {
-
+  
+  public Search_Index:string = '';
   private readonly APIUrl = environment.ApiUrl;
   
 

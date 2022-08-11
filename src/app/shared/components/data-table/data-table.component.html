@@ -13,7 +13,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr style="height: 5rem;" *ngFor="let char of (DataFromApi | sortBy :SortTable.colum :SortTable.type ); let i=index">
+          <tr style="height: 5rem;" *ngFor="let char of (DataFromApi | searchFilter :ApiService.Search_Index | sortBy :SortTable.colum :SortTable.type ); let i=index">
             <th scope="row">{{char.id }}</th>
             <td>{{ char.name }}</td>
             <td>{{ char.gender ? char.gender : 'Unknow...' }}</td>
