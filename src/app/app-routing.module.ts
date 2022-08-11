@@ -24,8 +24,8 @@ const routes: Routes = [
   },
   { path: 'students', component: StudentsComponent, children: 
     [
-      { path: 'check-application', component: CheckApplicationComponent },
-      { path: 'new-student', component: NewStudentFormComponent }
+      { path: 'new-student', component: NewStudentFormComponent, },
+      { path: 'check-application', component: CheckApplicationComponent }
     ]
   },
   { path: 'teachers', component: TeachersComponent },

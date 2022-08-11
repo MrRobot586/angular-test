@@ -33,7 +33,7 @@ export class CheckApplicationComponent implements OnInit {
   FillFormFields():FormGroup {
     return this.fb.group(
       {
-        firstName: [ {value: this.NewStudentApplyData ?  this.NewStudentApplyData : '' , disabled: true }],
+        firstName: [ {value: this.NewStudentApplyData ?  this.NewStudentApplyData.firstName : '' , disabled: true }],
         lastName: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.lastName : '', disabled: true }],
         age: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.age : '', disabled: true }],
         gender: [{value: this.NewStudentApplyData ?  this.NewStudentApplyData.gender : '', disabled: true }],

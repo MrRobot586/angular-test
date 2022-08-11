@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -14,9 +15,7 @@ export class NewStudentFormComponent implements OnInit {
 
   constructor(private readonly fb: FormBuilder) { }
 
-  ngOnInit(): void { this.NewStudentForm = this.SetUpForm() }
-
-  onSubmit():void{ }
+  ngOnInit():void { this.NewStudentForm = this.SetUpForm() }
 
   SetUpForm():FormGroup {
     return this.fb.group({
@@ -92,6 +91,9 @@ export class NewStudentFormComponent implements OnInit {
     };
 
     localStorage.setItem('NewStudentApplication', JSON.stringify(this.FormData));
+    
+    this.NewStudentForm.reset();
+
     
     setTimeout(() => {
       this.ShowAlert = true;
